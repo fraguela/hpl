@@ -123,7 +123,7 @@ $(testBinaries) : % : %.cpp $(PROJECTLIB)
 	$(CXX) $(CPPFLAGS) -o $@ $^ $(OPENCLLIBS)
 
 $(clBlasInterface_TEST_BIN_DIR) :
-	mkdip -p $@
+	mkdir -p $@
 
 $(clBlasInterface_testBinaries) : % : $(clBlasInterface_TEST_BIN_DIR)/%
 
