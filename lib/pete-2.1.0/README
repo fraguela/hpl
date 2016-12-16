@@ -1,0 +1,114 @@
+/*******************************************************************
+ *                                                                 *
+ *                       PETE Release Notes                        *
+ *                         Version 2.1.0                           *
+ *                                                                 *
+ *******************************************************************
+ *    For installation help, see INSTALL (or INSTALL.TXT if using  *
+ *        Windows).                                                *
+ *                                                                 *
+ *    For the people who created PETE, see CREDITS (or             *
+ *        CREDITS.TXT if using Windows).                           *
+ *                                                                 *
+ *    For licensing info, see LICENSE (or LICENSE.TXT if using     *
+ *        Windows).                                                *
+ *                                                                 *
+ *    For a tutorial on using PETE, open html/index.html in your   *
+ *        web browser.                                             *
+ *                                                                 *
+ *    For more information, including updates and new releases,    *
+ *        see http://www.acl.lanl.gov/pete                         *
+ *                                                                 *
+ *    For other neat software packages from the ACL,               *
+ *        see http://www.acl.lanl.gov/software                     *
+ *                                                                 *
+ *    For help, reporting bugs, and making suggestions, please     *
+ *        send e-mail to pete@acl.lanl.gov                         *
+ *******************************************************************/
+                            
+Welcome to PETE 2.1.0, the second public release of the Portable
+Expression Template Engine. In 1995, Todd Veldhuizen and David 
+Vandevoorde developed the expression-template technique to 
+transform arithmetic expressions involving array-like containers into 
+efficient loops that rivaled hand-coded C in speed. Expression 
+templates are now at the heart of highly efficient scientific 
+container libraries including POOMA and Blitz++. Unfortunately, the
+technique's perceived complexity and the belief that it is limited 
+to evaluating array expressions have deterred many potential 
+expression-template users. PETE is therefore designed to easily 
+add expression-template functionality to their container classes 
+and to simply perform complex expression manipulations.
+
+////////////////////////////////////////////////////////////////////
+
+RELEASE NOTES v2.1.0
+
+////////////////////////////////////////////////////////////////////
+
+Several minor changes have been made from the previous release
+of PETE.  Default constructors were added to many tag classes
+to produce more efficient code.  The MakeOperators tool produces
+slightly smaller operator files now that some redundant trinary
+operator definitions were removed.
+
+In addition, some features were added to support the FACT library
+which supports some interesting function programming additions to C++
+that are built using expression templates.  See
+http://www.fz-juelich.de/zam/FACT/ for more details.
+We would like to thank Joerg Striegnitz of Research Center Juelich,
+the Federal Republic of German, for several of the changes that went
+into this release.  One change that will be of interest to general
+users is the addition of guards for PETE specific operators in the
+operator files, so that it is now possible to include multiple operator
+files for different classes without generating conflicts.
+
+Namespace support will appear in PETE 2.1.1.
+
+Expression construction with multiple arguments
+-----------------------------------------------
+
+PETE now supports constructing expressions from other expressions
+with one or two additional arguments.  Using these constructors can
+result in significantly improved efficiency in some situations.
+
+For example, suppose your container type supports the creation
+of view containers.  You could take a view of an expression with
+code like:
+
+typename ForEach<Expr, ViewF, ViewC>::Type_t view;
+view = forEach(expr, ViewF(domain), ViewC());
+
+This code would construct view containers for each leaf that
+would end up in the final expression, but they would be copied
+several times as the subexpressions are combined to build the
+final tree.
+
+If the leaf nodes (the view containers) support construction from
+a container and a domain, then you can construct the tree in place
+at a significant savings like so:
+
+typename ForEach<Expr, ViewF, ViewC>::Type_t view(expr, domain);
+
+////////////////////////////////////////////////////////////////////
+
+RELEASE NOTES v2.0
+
+////////////////////////////////////////////////////////////////////
+
+Namespaces
+----------
+
+PETE will ultimately be placed in the PETE:: namespace.
+However, for this release, most of the functionality is in
+the global namespace. This is due to spotty namespace support
+by several of our target compilers. 
+
+Optimization
+------------
+
+To get best results with PETE, you need a compiler that is capable
+of performing very aggressive inlining. The two best compilers
+we've found in this regard are KAI C++ v3.3 or greater and 
+SGI CC, v7.3 or greater. GCC doesn't currently produce the best
+code when using PETE, but we are working with the developers to
+fix this and hope to have some good results this year.

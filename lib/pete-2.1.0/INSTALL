@@ -1,0 +1,128 @@
+/*******************************************************************
+ *                                                                 *
+ *       PETE build and installation instructions for Unix         *
+ *                          Version 2.1.0                          *
+ *                                                                 *
+ *******************************************************************
+ *    For release notes, see README.                               *
+ *                                                                 *
+ *    For licensing info, see LICENSE.                             *
+ *                                                                 *
+ *    For the people who created PETE, see CREDITS.                *
+ *                                                                 *
+ *    For a tutorial on using PETE, open html/index.html in your   *
+ *        web browser.                                             *
+ *                                                                 *
+ *    For more information, including updates and new releases,    *
+ *        see http://www.acl.lanl.gov/pete                         *
+ *                                                                 *
+ *    For other neat software packages from the ACL,               *
+ *        see http://www.acl.lanl.gov/software                     *
+ *                                                                 *
+ *    For help, reporting bugs, and making suggestions, please     *
+ *        send e-mail to pete@acl.lanl.gov                         *
+ *******************************************************************/
+
+                      SUPPORTED COMPILERS:
+                      --------------------
+
+PETE version 2.1.0 had been tested on the following platforms and
+compilers:
+
+	o SGI IRIX 6.X, with the Kuck and Associates KCC compiler
+	  (v3.3d or later, including 3.4x)
+	o SGI IRIX 6.X, with the GCC compiler
+	  (v2.95 or greater)
+	o SGI IRIX 6.X, with SGI C++ 7.3 or later compiler
+	  (without patch 3659!)
+	o Linux, with the Kuck and Associates KCC compiler
+	  (v3.3d or later, including 3.4x)
+	o Linux, with the GCC compiler
+	  (v2.95 or greater)
+
+More information about the compilers above can be obtained from
+the following URLs:
+
+        o GCC Home Page (GCC):            http://gcc.gnu.org
+        o Kuck and Associates (KCC):      http://www.kai.com
+        o Silicon Graphics (SGI C++):     http://www.sgi.com
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+                BEFORE YOU START TO COMPILE PETE:
+                ---------------------------------
+
+Since you're reading this file, you've successfully expanded the .tgz
+file you downloaded from the net or you have found the unix-specific
+pete-2.1.0 directory on the ACL CD-ROM.
+
+You should notice the following files/folders inside of the
+pete-2.1.0 folder:
+
+   CREDITS ....................... the people who developed PETE
+   examples ...................... sample PETE programs
+   config ........................ makefile data for several compilers
+   html .......................... HTML documentation for PETE
+   INSTALL ....................... this file
+   LICENSE ....................... the licensing terms for PETE
+   makefile ...................... top-level makefile for PETE
+   README ........................ general information and release notes
+   src ........................... the PETE source code
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+               UNIX BUILD/INSTALL INSTRUCTIONS:
+               --------------------------------
+
+PETE is a very simple package.  To use PETE, you typically only need to
+include the header file src/PETE/PETE.h, and an additional header file
+created by the MakeOperators tool found in src/Tools.  Read the tutorial
+ and article in the html directory to get a feel for how to use PETE. The 
+following instructions tell you how to build the tool, build the example codes,
+and how to install PETE in a central location.
+
+1. Select which architecture and compiler you wish to use.  Several
+   configuration files are listed in the config/ directory,
+   for various unix platforms and compilers  (currently LINUXKCC, LINUXEGCS,
+   SGI64CC, SGI64KCC, SGIN32KCC, SGI64EGCS and SIMPLE).
+   Pick the appropriate file for your system.  If none are appropriate,
+   then either modify one that is close, or copy one and modify it.
+   The file SIMPLE is a good place to start, as it contains no
+   architecture specific flags.  For egcs or g++ on a generic unix
+   platform, start with LINUXEGCS.  SGI64EGCS contains several SGI
+   specific flags.
+
+   The configuration file needs to specify
+   the c++ compiler (CXX), compiler arguments for building the tool
+   (CXXARG), and compiler arguments that cause adequate inlining for
+   expression templates to be efficient (CXXOPTARG).  Optionally, you
+   can also provide an architecture specific subdirectory name (PETEARCHDIR)
+   for use in installing the tool.
+
+2. Set the environment variable PETEARCH to the name of the configuration
+   file you chose from step 1.  For example, if you used config/SGI64CC,
+   set PETEARCH to SGI64CC.
+
+3. At the top-level PETE directory, run 'make'.  The default target builds
+   the tools.  (You could also change to the src/Tools directory and type
+   'make' there.)
+
+4. From the top-level PETE directory:
+   To build the example codes, type 'make example'.  To run all the example
+   codes, type 'make run'.  To remove all the examples and the tool, type
+   'make clean'.
+
+
+5. (optional) To install PETE in a central location, set the environment
+   variable PETEDIR to the location you wish to install PETE.  From the
+   top-level PETE directory type 'make install'.  You should build
+   the tool (step 3) before installing PETE.  Several of the examples
+   (examples/DDJ, examples/Mixed, and examples/Vector) contain a 'Makefile.user'
+   that illustrates how to use PETE from its installed location.  (The default
+   makefiles use the tool and header files in the source tree in which they
+   are located.)
+
+6. The html/ directory contains a tutorial (index.html), an article published
+   in Dr. Dobb's Journal (ddj_article.html), and a man page for the
+   MakeOperators tool (makeoperators.html).
+

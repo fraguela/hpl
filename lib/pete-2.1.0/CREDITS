@@ -1,0 +1,78 @@
+/*******************************************************************
+ *                                                                 *
+ *                           PETE Credits                          *
+ *                          Version 2.1.0                          *
+ *                                                                 *
+ *******************************************************************
+ *    For installation help, see INSTALL (or INSTALL.TXT if using  *
+ *        Windows).                                                *
+ *                                                                 *
+ *    For release notes, see README (or README.TXT if using        *
+ *        Windows).                                                *
+ *                                                                 *
+ *    For licensing info, see LICENSE (or LICENSE.TXT if using     *
+ *        Windows).                                                *
+ *                                                                 *
+ *    For a tutorial on using PETE, open html/index.html in your   *
+ *        web browser.                                             *
+ *                                                                 *
+ *    For more information, including updates and new releases,    *
+ *        see http://www.acl.lanl.gov/pete                         *
+ *                                                                 *
+ *    For other neat software packages from the ACL,               *
+ *        see http://www.acl.lanl.gov/software                     *
+ *                                                                 *
+ *    For help, reporting bugs, and making suggestions, please     *
+ *        send e-mail to pete@acl.lanl.gov                         *
+ *******************************************************************/
+
+Support:
+--------
+
+The software distributed in this directory has been developed with 
+the support of the United States Department of Energy DOE 2000 
+program, at Los Alamos National Laboratory in Los Alamos, New Mexico.
+
+PETE Development:
+------------------
+
+John Ambrosiano, Advanced Computing Lab, LANL
+James Crotinger, Advanced Computing Lab, LANL
+Julian Cummings, Advanced Computing Lab, LANL
+Richard Graham, Advanced Computing Lab, LANL
+Scott Haney, POOMA Team Leader, Advanced Computing Lab, LANL
+Bill Humphrey, Advanced Computing Lab, LANL
+Steve Karmesin, Advanced Computing Lab, LANL
+Chris Luchini, Advanced Computing Lab, LANL
+Graham Mark, CIC-12, LANL
+Stephen Smith, Advanced Computing Lab, LANL
+Timothy Williams, Advanced Computing Lab, LANL
+
+Very useful input came from the author of FACT:
+-----------------------------------------------
+
+Joerg Striegnitz, Research Center Juelich, Federal Republic of Germany
+
+GCC Compiler Support:
+----------------------
+
+Mark Mitchell, CodeSourcery, LLC
+
+Documentation:
+--------------
+
+Greg Wilson, Bonsai Software, Inc.
+
+Administrative Support:
+-----------------------
+
+Theresa Romero-Ayala, Advanced Computing Lab, LANL
+Jennifer Duran, Advanced Computing Lab, LANL
+
+Thanks to:
+----------
+
+Andreas Hommel
+Rod Oldehoeft
+John Reynders
+Todd Veldhuizen

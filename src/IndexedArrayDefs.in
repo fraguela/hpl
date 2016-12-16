@@ -1,0 +1,8 @@
+classes
+-----
+  ARG   = "class T[n], int D[n]"
+  CLASS = "HPL::IndexedArray<T[n],D[n]>"
+-----
+  ARG   = "class T[n]"
+  CLASS = "HPL::Array<T[n], 0>"
+

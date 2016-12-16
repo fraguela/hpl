@@ -1,0 +1,293 @@
+unaryOps
+-----
+  TAG = "OpNot"
+  FUNCTION = "operator!"
+  EXPR = "return '(' + ('!' + a) + ')';"
+-----
+  TAG = "OpUnaryMinus"
+  FUNCTION = "operator-"
+  EXPR = "return '(' + ('-' + a) + ')';"
+-----
+  TAG = "OpUnaryPlus"
+  FUNCTION = "operator+"
+  EXPR = "return '(' + ('+' + a) + ')';"
+-----
+  TAG = "OpBitwiseNot"
+  FUNCTION = "operator~"
+  EXPR = "return '(' + ('~' + a) + ')';"
+-----
+  TAG = "OpAcos"
+  FUNCTION = "acos"
+  EXPR = "return \"acos(\" + a + ')';"
+-----
+  TAG = "OpAcosh"
+  FUNCTION = "acosh"
+  EXPR = "return \"acosh(\" + a + ')';"
+-----
+  TAG = "OpAcospi"
+  FUNCTION = "acospi"
+  EXPR = "return \"acospi(\" + a + ')';"
+-----
+  TAG = "OpAsin"
+  FUNCTION = "asin"
+  EXPR = "return \"asin(\" + a + ')';"
+-----
+  TAG = "OpAsinh"
+  FUNCTION = "asinh"
+  EXPR = "return \"asinh(\" + a + ')';"
+-----
+  TAG = "OpAsinpi"
+  FUNCTION = "asinpi"
+  EXPR = "return \"asinpi(\" + a + ')';"
+-----
+  TAG = "OpAtan"
+  FUNCTION = "atan"
+  EXPR = "return \"atan(\" + a + ')';"
+-----
+  TAG = "OpAtanh"
+  FUNCTION = "atanh"
+  EXPR = "return \"atanh(\" + a + ')';"
+-----
+  TAG = "OpAtanpi"
+  FUNCTION = "atanpi"
+  EXPR = "return \"atanpi(\" + a + ')';"
+-----
+  TAG = "OpCbrt"
+  FUNCTION = "cbrt"
+  EXPR = "return \"cbrt(\" + a + ')';"
+-----
+  TAG = "OpCeil"
+  FUNCTION = "ceil"
+  EXPR = "return \"ceil(\" + a + ')';"
+-----
+  TAG = "OpCos"
+  FUNCTION = "cos"
+  EXPR = "return \"cos(\" + a + ')';"
+-----
+  TAG = "OpCosh"
+  FUNCTION = "cosh"
+  EXPR = "return \"cosh(\" + a + ')';"
+-----
+  TAG = "OpCospi"
+  FUNCTION = "cospi"
+  EXPR = "return \"cospi(\" + a + ')';"
+-----
+  TAG = "OpErfc"
+  FUNCTION = "erfc"
+  EXPR = "return \"erfc(\" + a + ')';"
+-----
+  TAG = "OpErf"
+  FUNCTION = "erf"
+  EXPR = "return \"erf(\" + a + ')';"
+-----
+  TAG = "OpExp"
+  FUNCTION = "exp"
+  EXPR = "return \"exp(\" + a + ')';"
+-----
+  TAG = "OpExp2"
+  FUNCTION = "exp2"
+  EXPR = "return \"exp2(\" + a + ')';"
+-----
+  TAG = "OpExp10"
+  FUNCTION = "exp10"
+  EXPR = "return \"exp10(\" + a + ')';"
+-----
+  TAG = "OpExpm1"
+  FUNCTION = "expm1"
+  EXPR = "return \"expm1(\" + a + ')';"
+-----
+  TAG = "OpFabs"
+  FUNCTION = "fabs"
+  EXPR = "return \"fabs(\" + a + ')';"
+-----
+  TAG = "OpFloor"
+  FUNCTION = "floor"
+  EXPR = "return \"floor(\" + a + ')';"
+-----
+  TAG = "OpIlogb"
+  FUNCTION = "ilogb"
+  EXPR = "return \"ilogb(\" + a + ')';"
+-----
+  TAG = "OpLgamma"
+  FUNCTION = "lgamma"
+  EXPR = "return \"lgamma(\" + a + ')';"
+-----
+  TAG = "OpLog"
+  FUNCTION = "log"
+  EXPR = "return \"log(\" + a + ')';"
+-----
+  TAG = "OpLog2"
+  FUNCTION = "log2"
+  EXPR = "return \"log2(\" + a + ')';"
+-----
+  TAG = "OpLog10"
+  FUNCTION = "log10"
+  EXPR = "return \"log10(\" + a + ')';"
+-----
+  TAG = "OpLog1p"
+  FUNCTION = "log1p"
+  EXPR = "return \"log1p(\" + a + ')';"
+-----
+  TAG = "OpLogb"
+  FUNCTION = "logb"
+  EXPR = "return \"logb(\" + a + ')';"
+-----
+  TAG = "OpNan"
+  FUNCTION = "nan"
+  EXPR = "return \"nan(\" + a + ')';"
+-----
+  TAG = "OpNatRsqrt"
+  FUNCTION = "native_rsqrt"
+  EXPR = "return \"native_rsqrt(\" + a + ')';"
+-----
+  TAG = "OpNs"
+  FUNCTION = "native_sqrt"
+  EXPR = "return \"native_sqrt(\" + a + ')';"
+-----
+  TAG = "OpRint"
+  FUNCTION = "rint"
+  EXPR = "return \"rint(\" + a + ')';"
+-----
+  TAG = "OpRound"
+  FUNCTION = "round"
+  EXPR = "return \"round(\" + a + ')';"
+-----
+  TAG = "OpRsqrt"
+  FUNCTION = "rsqrt"
+  EXPR = "return \"rsqrt(\" + a + ')';"
+-----
+  TAG = "OpSin"
+  FUNCTION = "sin"
+  EXPR = "return \"sin(\" + a + ')';"
+-----
+  TAG = "OpSinh"
+  FUNCTION = "sinh"
+  EXPR = "return \"sinh(\" + a + ')';"
+-----
+  TAG = "OpSinpi"
+  FUNCTION = "sinpi"
+  EXPR = "return \"sinpi(\" + a + ')';"
+-----
+  TAG = "OpSqrt"
+  FUNCTION = "sqrt"
+  EXPR = "return \"sqrt(\" + a + ')';"
+-----
+  TAG = "OpTan"
+  FUNCTION = "tan"
+  EXPR = "return \"tan(\" + a + ')';"
+-----
+  TAG = "OpTanh"
+  FUNCTION = "tanh"
+  EXPR = "return \"tanh(\" + a + ')';"
+-----
+  TAG = "OpTanpi"
+  FUNCTION = "tanpi"
+  EXPR = "return \"tanpi(\" + a + ')';"
+-----
+  TAG = "OpTgamma"
+  FUNCTION = "tgamma"
+  EXPR = "return \"tgamma(\" + a + ')';"
+-----
+  TAG = "OpTrunc"
+  FUNCTION = "trunc"
+  EXPR = "return \"trunc(\" + a + ')';"
+
+binaryOps
+-----
+  TAG = "OpAdd"
+  FUNCTION = "operator+"
+  EXPR = "return '('+ a + '+' + b + ')';"
+-----
+  TAG = "OpSubtract"
+  FUNCTION = "operator-"
+  EXPR = "return '('+ a + '-' + b + ')';"
+-----
+  TAG = "OpMultiply"
+  FUNCTION = "operator*"
+  EXPR = "return '('+ a + '*' + b + ')';"
+-----
+  TAG = "OpDivide"
+  FUNCTION = "operator/"
+  EXPR = "return '('+ a + '/' + b + ')';"
+-----
+  TAG = "OpDot"
+  FUNCTION = "dot"
+  EXPR = "return \"dot(\" + a + ',' + b + ')';"
+-----
+  TAG = "OpMax"
+  FUNCTION = "max"
+  EXPR = "return \"max(\" + a + ',' + b + ')';"
+-----
+  TAG = "OpMod"
+  FUNCTION = "operator%"
+  EXPR = "return '('+ a + '%' + b + ')';"
+-----
+  TAG = "OpBitwiseAnd"
+  FUNCTION = "operator&"
+  EXPR = "return '('+ a + '&' + b + ')';"
+-----
+  TAG = "OpBitwiseOr"
+  FUNCTION = "operator|"
+  EXPR = "return '('+ a + '|' + b + ')';"
+-----
+  TAG = "OpBitwiseXor"
+  FUNCTION = "operator^"
+  EXPR = "return '('+ a + '^' + b + ')';"
+-----
+  TAG = "OpAnd"
+  FUNCTION = "operator&&"
+  EXPR = "return '('+ a + '&' + '&' + b + ')';"
+-----
+  TAG = "OpOr"
+  FUNCTION = "operator||"
+  EXPR = "return '('+ a + '|' + '|' + b + ')';"
+-----
+  TAG = "OpLT"
+  FUNCTION = "operator<"
+  EXPR = "return '('+ a + '<' + b + ')';"
+-----
+  TAG = "OpLE"
+  FUNCTION = "operator<="
+  EXPR = "return '('+ a + '<' + '=' + b + ')';"
+-----
+  TAG = "OpGT"
+  FUNCTION = "operator>"
+  EXPR = "return '('+ a + '>' + b + ')';"
+-----
+  TAG = "OpGE"
+  FUNCTION = "operator>="
+  EXPR = "return '('+ a + '>' + '=' + b + ')';"
+-----
+  TAG = "OpEQ"
+  FUNCTION = "operator=="
+  EXPR = "return '('+ a + '=' + '=' + b + ')';"
+-----
+  TAG = "OpNE"
+  FUNCTION = "operator!="
+  EXPR = "return '('+ a + '!' + '=' + b + ')';"
+-----
+  TAG = "OpNd"
+  FUNCTION = "native_divide"
+  EXPR = "return \"native_divide(\" + a + ',' + b + ')';"
+-----
+  TAG = "OpPo"
+  FUNCTION = "pow"
+  EXPR = "return \"pow(\" + a + ',' + b + ')';"
+-----
+  TAG = "OpAtan2"
+  FUNCTION = "atan2"
+  EXPR = "return \"atan2(\" + a + ',' + b + ')';"
+-----
+  TAG = "OpSinCos"
+  FUNCTION = "sincos"
+  EXPR = "return \"sincos(\" + a + ',' +'&' + b + ')';"  
+
+binaryLeftOps
+-----
+  TAG = "OpLeftShift"
+  FUNCTION = "operator<<"
+  EXPR = "return '(' + a + '<' + '<' + b+ ')';"
+-----
+  TAG = "OpRightShift"
+  FUNCTION = "operator>>"
+  EXPR = "return '(' + a + '>' + '>' + b+ ')';"
