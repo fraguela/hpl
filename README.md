@@ -177,6 +177,7 @@ Other contributors:
 - [Ramón Doallo](http://gac.udc.es/~doallo) Depto. de Electrónica e Sistemas, Universidade da Coruña, Spain.
 - Diego Nieto developed the clBLAS integration package
 
+<html>
 <!-- Start of StatCounter Code for Default Guide -->
 <script type="text/javascript">
 var sc_project=8898944; 
@@ -194,3 +195,4 @@ target="_blank"><img class="statcounter"
 src="http://c.statcounter.com/8898944/0/a14db718/1/"
 alt="free web stats"></a></div></noscript>
 <!-- End of StatCounter Code for Default Guide -->
+</html>
