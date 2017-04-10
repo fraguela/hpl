@@ -80,7 +80,6 @@ A portable and adaptable fault tolerance solution for heterogeneous applications
 <b> Journal of Parallel and Distributed Computing</b>, 104:146-158, June 2017.
 </li>
 
-<br>
 <li>
 <i>M. Vi&ntilde;as, B.B. Fraguela, D. Andrade, R. Doallo</i>.
 <a href="http://gac.udc.es/~basilio/papers/Vinas17-HPL.pdf">
