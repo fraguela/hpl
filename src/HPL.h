@@ -41,17 +41,22 @@
 
 namespace HPL {
 
+  // http://stackoverflow.com/questions/10379691/creating-macro-using-line-for-different-variable-names
+#define HPL_COMBINE1(X,Y) X##Y
+#define HPL_COMBINE(X,Y) HPL_COMBINE1(X,Y)
+
   /** @name Control Macros 
    * Macros for control structures inside user functions to be built and compiled by the library.
    */
   ///@{
-#define HPL_common_block_macro for(int _hpl_tmp = 0; _hpl_tmp < 1; TheGlobalState().getCodifier().endBlock(), ++_hpl_tmp)
-  
-#define if_(x)        TheGlobalState().getCodifier().if_(stringize(x));      HPL_common_block_macro
-#define else_if_(x)   TheGlobalState().getCodifier().else_if_(stringize(x)); HPL_common_block_macro
-#define else_         TheGlobalState().getCodifier().else_();                HPL_common_block_macro        
-#define while_(x)     TheGlobalState().getCodifier().while_(stringize(x));   HPL_common_block_macro
-#define for_(a,b,c)   TheGlobalState().getCodifier().for_(stringize(a), stringize(b), stringize(c)); HPL_common_block_macro
+#define HPL_common_block_macro(...) for(int HPL_COMBINE(_hpl_tmp,__LINE__) = (__VA_ARGS__, 0) ; HPL_COMBINE(_hpl_tmp,__LINE__) < 1; TheGlobalState().getCodifier().endBlock(), ++HPL_COMBINE(_hpl_tmp,__LINE__))
+
+#define if_(x)      HPL_common_block_macro(TheGlobalState().getCodifier().if_(stringize(x)))
+#define else_if_(x) HPL_common_block_macro(TheGlobalState().getCodifier().else_if_(stringize(x)))
+#define elseif_(x) HPL_common_block_macro(TheGlobalState().getCodifier().else_if_(stringize(x)))
+#define else_       HPL_common_block_macro(TheGlobalState().getCodifier().else_())
+#define while_(x)   HPL_common_block_macro(TheGlobalState().getCodifier().while_(stringize(x)))
+#define for_(a,b,c) HPL_common_block_macro(TheGlobalState().getCodifier().for_(stringize(a), stringize(b), stringize(c)))
 #define endif_
 #define endwhile_     
 #define endfor_     

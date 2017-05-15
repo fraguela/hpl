@@ -431,6 +431,7 @@ namespace HPL {
 
   /// Class with common points for all the scalar Arrays
   class InternalScalar : public BaseArray {
+
   public:
     
     /// Default constructor
@@ -441,7 +442,7 @@ namespace HPL {
     
     /// Special constructor to avoid creation of new variables for scalars passed by value
     InternalScalar(const InternalScalar& another, bool doactualcopy);
-    
+
     /// Returns a string representation of this object
     const String_t& string() const { return name(); }
 
@@ -451,6 +452,12 @@ namespace HPL {
     
     int getXYZDim(int d) const { return 1; }
 
+    DistribType getDistrib() { return D_NONE; }
+    
+    int getDistribSize() { return 0; }
+    
+    void killChildren() { }
+  
   protected:
     /**
      * @brief This method make a part of the performance of printing
@@ -498,17 +505,13 @@ namespace HPL {
       if(HPL_STATE(BuildingFBody) && n.compare(name())) print(n); 
     }
 
-    DistribType getDistrib()
-    {
-       	return D_NONE;
-    }
-
-    int getDistribSize()
-    {
-     	return 0;
-    }
-
-    void killChildren(){};
+    /**
+     * @brief Move constructor. The variable assumes the name of the input one
+     * @param[in] another Initialization array.
+     */
+    Array(Array<T, 0>&& another)
+    : InternalScalar(another), v_(std::move(another.v_))
+    { }
 
     /**
      * @brief initialization from an IndexedArray in a kernel
@@ -621,6 +624,14 @@ namespace HPL {
       if(HPL_STATE(BuildingFBody) && n.compare(name())) print(n); 
     }
     
+    /**
+     * @brief Move constructor. The variable assumes the name of the input one
+     * @param[in] another Initialization array.
+     */
+    Array(Array<T, 0>&& another)
+    : InternalScalar(another), v_(std::move(another.v_))
+    { }
+
     /**
      * @brief initialization from an IndexedArray in a kernel
      * @param[in] another Initialization IndexedArray
@@ -756,8 +767,7 @@ namespace HPL {
     
     /// Get the value of this scalar as a constant
     T value() const { return v_; }
-    void killChildren() {}
-    
+
   protected:
     
     void print_from_initializer(const String_t& value) const {
@@ -2859,10 +2869,12 @@ if(!TheGlobalState().clbinding().get_copy_faster(w_platform_id, w_device_type))
         MultiDimArray<T,1>::distribSize = size;
         return *this;
     }
+    
     DistribType getDistrib()
     {
         return MultiDimArray<T,1>::distrib;
     }
+    
     int getDistribSize()
     {
     	return MultiDimArray<T,1>::distribSize;

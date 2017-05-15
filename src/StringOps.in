@@ -71,6 +71,10 @@ unaryOps
   TAG = "OpCospi"
   FUNCTION = "cospi"
   EXPR = "return \"cospi(\" + a + ')';"
+  -----
+  TAG = "OpNativeCos"
+  FUNCTION = "native_cos"
+  EXPR = "return \"native_cos(\" + a + ')';"
 -----
   TAG = "OpErfc"
   FUNCTION = "erfc"
@@ -167,6 +171,10 @@ unaryOps
   TAG = "OpSinpi"
   FUNCTION = "sinpi"
   EXPR = "return \"sinpi(\" + a + ')';"
+  -----
+  TAG = "OpNativeSin"
+  FUNCTION = "native_sin"
+  EXPR = "return \"native_sin(\" + a + ')';"
 -----
   TAG = "OpSqrt"
   FUNCTION = "sqrt"
