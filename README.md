@@ -74,6 +74,14 @@ int main(int argc, char **argv)
 
 <ul>
 <li>
+<i>M. Vi&ntilde;as, B.B. Fraguela, D. Andrade, R. Doallo</i>.
+<a href="http://gac.udc.es/~basilio/papers/Vinas17-HPLStencils.pdf">
+Facilitating the development of stencil applications using the Heterogeneous Programming Library</a>.
+<b> Concurrency and Computation: Practice and Experience</b>, 29(12):e4152, June 2017.
+</li>
+
+<br>
+<li>
 <i>N. Losada, B.B. Fraguela, P. Gonz&aacute;lez, M.J. Mart&iacute;n</i>.
 <a href="http://gac.udc.es/~basilio/papers/Losada17-CPPC_HPL.pdf">
 A portable and adaptable fault tolerance solution for heterogeneous applications</a>.
