@@ -32,7 +32,7 @@
 
 const char * const kernel_code = "__kernel void add1(__global char *p, int n) { for(int i = get_global_id(0); i < n; i += get_global_size(0)) p[i]++; } ";
 
-constexpr cl_int BufSize = 1024 * 1024;
+constexpr size_t BufSize = 1024 * 1024;
 char hostBuffer[BufSize];
 
 
@@ -46,8 +46,8 @@ void eval(const HPL::Platform_t pt, const HPL::Device_t dt)
   HPL::internal::DeviceImplementation *di1 = HPL::TheCLbinding().getDevice(pt, dt, 1);
   HPL::internal::DeviceTypeData *dtd = di0->dtd_;
   
-  cl::Buffer b0(dtd->context_, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, BufSize, hostBuffer);
-  cl::Buffer b1(dtd->context_, CL_MEM_READ_WRITE, BufSize);
+  cl::Buffer b0(dtd->context_, (cl_mem_flags)(CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR), BufSize, (void *)hostBuffer);
+  cl::Buffer b1(dtd->context_, (cl_mem_flags)CL_MEM_READ_WRITE, BufSize);
  
   cl::Program::Sources sources(1, std::make_pair(kernel_code, strlen(kernel_code)+1));
   dtd->program_ = cl::Program(dtd->context_, sources, &err);

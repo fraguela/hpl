@@ -2051,7 +2051,7 @@ public:
   
 /*! \class Sampler
  * \brief Sampler interface for cl_sampler.
- */
+
 class Sampler : public detail::Wrapper<cl_sampler>
 {
 public:
@@ -2110,7 +2110,10 @@ public:
     }
 };
 
-__GET_INFO_HELPER_WITH_RETAIN(cl::Sampler)
+ __GET_INFO_HELPER_WITH_RETAIN(cl::Sampler)
+
+*/
+  
 
 class Program;
 class CommandQueue;
@@ -2475,11 +2478,18 @@ public:
         const Device& device,
         cl_command_queue_properties properties = 0,
         cl_int* err = NULL)
-    {
-        cl_int error;
-        object_ = ::clCreateCommandQueue(
-            context(), device(), properties, &error);
+    { cl_int error;
 
+/* If we do this, we will REQUIRE OPENCL 2.0
+#if defined(CL_VERSION_2_0) || defined(CL_VERSION_2_1) || defined(CL_VERSION_2_2)
+      cl_queue_properties properties_v2[2] = {properties , 0};
+      object_ = ::clCreateCommandQueueWithProperties(context(), device(), properties_v2, &error);
+#else
+*/
+      object_ = ::clCreateCommandQueue(context(), device(), properties, &error);
+/*
+#endif
+*/
         detail::errHandler(error, __CREATE_COMMAND_QUEUE_ERR);
         if (err != NULL) {
             *err = error;
@@ -2863,7 +2873,7 @@ public:
                 (cl_event*) event),
             __ENQUEUE_NDRANGE_KERNEL_ERR);
     }
-
+/*
     cl_int enqueueTask(
         const Kernel& kernel,
         const VECTOR_CLASS<Event>* events = NULL,
@@ -2877,7 +2887,7 @@ public:
                 (cl_event*) event),
             __ENQUEUE_TASK_ERR);
     }
-
+*/
     cl_int enqueueNativeKernel(
         void (*userFptr)(void *),
         std::pair<void*, ::size_t> args,
