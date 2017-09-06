@@ -71,6 +71,10 @@ int main(int argc, char **argv)
 ### Documentation
 
  - [HPL Programming Manual](http://hpl.des.udc.es/page1_assets/HPL_programming_manual.pdf)
+ - [A tutorial](http://gac.udc.es/~tonino/webmoises/public_html/courses_en.html)
+ - [Example comparison with OpenCL](http://gac.udc.es/~tonino/webmoises/public_html/index_en.html)
+
+### Publications
 
 <ul>
 <li>
@@ -80,7 +84,6 @@ Facilitating the development of stencil applications using the Heterogeneous Pro
 <b> Concurrency and Computation: Practice and Experience</b>, 29(12):e4152, June 2017.
 </li>
 
-<br>
 <li>
 <i>N. Losada, B.B. Fraguela, P. Gonz&aacute;lez, M.J. Mart&iacute;n</i>.
 <a href="http://gac.udc.es/~basilio/papers/Losada17-CPPC_HPL.pdf">
